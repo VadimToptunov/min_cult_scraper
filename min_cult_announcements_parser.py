@@ -25,7 +25,6 @@ def get_last_page(soup):
 def parse_announcements(session, url_to_parse, main_url, json_file):
     objects = []
     response = session.get(url_to_parse)
-    soup = BeautifulSoup(response.content, 'html.parser')
     for i in soup.find_all('div', {'class': 'b-article__main'}):
         a = i.find_all('a', {'class': 'b-news-list__item'})
         for j in a:
