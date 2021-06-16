@@ -18,7 +18,7 @@ def get_announcements():
 
 def get_last_page(soup):
     spans = soup.find_all('a', {'class': 'b-pager__link'})
-    match = re.search("\\d{3}<", str(spans[-1])).group(0)
+    match = re.search("\\d{1,4}<", str(spans[-1])).group(0)
     return int(match.strip("<"))
 
 
